@@ -23,7 +23,7 @@ public class Kartyatrukk {
         }
         
         for (int i = 0; i < 3; i++) {
-            pakli[db++] = szinek[3] + "_" + ertekek[i];
+            pakli[db++] = szinek[3] + " " + ertekek[i];
         }
     }
     
