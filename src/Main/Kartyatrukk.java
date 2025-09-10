@@ -1,10 +1,12 @@
 
 package Main;
 
+import java.util.Scanner;
+
 public class Kartyatrukk {
 
     static String[] pakli = new String[22];
-    
+    static Scanner scn = new Scanner(System.in);
 
     public static void main(String[] args) {
         osszeallit();
@@ -27,6 +29,16 @@ public class Kartyatrukk {
         }
     }
     
+    public static int beker() {
+        boolean jo;
+        int oszlop;
+        do {
+            System.out.print("Melyik oszlop (1-3): ");
+            oszlop = scn.nextInt();
+            jo = oszlop >= 1 && oszlop <=3;
+        } while (!jo);
+        return oszlop;
+    }
     
     
     public static void kirak() {
@@ -37,4 +49,13 @@ public class Kartyatrukk {
             }
         }
     }
+    
+    public static void kever(){
+        //a választott oszlop mindig középre kerüljön
+    }
+    
+    private static void melyikVolt(){
+        System.out.println("A választott lap: " +pakli[11]);
+    }
+    
 }
