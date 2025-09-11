@@ -12,7 +12,7 @@ public class Kartyatrukk {
         osszeallit();
         kirak();
         beker();
-        kever(1);
+        kever(beker());
     }
 
     public static void osszeallit() {
