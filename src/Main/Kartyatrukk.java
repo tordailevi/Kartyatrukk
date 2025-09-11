@@ -11,6 +11,8 @@ public class Kartyatrukk {
     public static void main(String[] args) {
         osszeallit();
         kirak();
+        beker();
+        kever(1);
     }
 
     public static void osszeallit() {
@@ -40,7 +42,6 @@ public class Kartyatrukk {
         return oszlop;
     }
     
-    
     public static void kirak() {
         for (int i = 0; i < pakli.length; i++) {
             System.out.printf("%-7s".formatted(pakli[i]));
@@ -50,10 +51,26 @@ public class Kartyatrukk {
         }
     }
     
-    public static void kever(){
-        //a választott oszlop mindig középre kerüljön
+    public static void kever(int val){
+        switch (val) {
+
+            case 2:
+                for (int i = 1; i < 7; i++) {
+                    pakli[i] = pakli[19-(i-1)*3];
+                    pakli[i+7] = pakli[20-(i-1)*3];
+                    pakli[i+14] = pakli[21-(i-1)*3];
+                    System.out.println(pakli[i]);
+                }
+            case 3:
+                for (int i = 1; i < 7; i++) {
+                    pakli[i] = pakli[21-(i-1)*3];
+                    pakli[i+7] = pakli[19-(i-1)*3];
+                    pakli[i+14] = pakli[20-(i-1)*3];
+                    System.out.println(pakli[i]);
+                }
+        }
     }
-    
+
     private static void melyikVolt(){
         System.out.println("A választott lap: " +pakli[11]);
     }
