@@ -4,81 +4,20 @@ package Main;
 import java.util.Scanner;
 
 public class Kartyatrukk {
-
-    static String[] pakli = new String[22];
-    static String[] ujPakli = new String[22];
+   
     static Scanner scn = new Scanner(System.in);
-
+    
     public static void main(String[] args) {
-        osszeallit();
-        kirak(pakli);
-        for (int i = 0; i < 3; i++) {
-            kever(beker());
-            kirak(ujPakli);
-        }
-        melyikVolt();
-    }
-
-    public static void osszeallit() {
-        int db = 1;
-        String[] szinek = {"P", "T", "Z", "M"};
-        String[] ertekek = {"Asz", "Kir", "Fel", "X", "IX", "VIII"};
-
-        for (int i = 0; i < szinek.length-1; i++) { 
-            for (int j = 0; j < ertekek.length; j++) { 
-                pakli[db++] = szinek[i] + " " + ertekek[j];
-            }
-        }
         
-        for (int i = 0; i < 3; i++) {
-            pakli[db++] = szinek[3] + " " + ertekek[i];
-        }
-    }
-    
-    public static int beker() {
-        boolean jo;
-        int oszlop;
-        do {
-            System.out.print("Melyik oszlop (1-3): ");
-            oszlop = scn.nextInt();
-            jo = oszlop >= 1 && oszlop <=3;
-        } while (!jo);
-        return oszlop;
-    }
-    
-    public static void kirak(String[] pakli) {
-        for (int i = 0; i < pakli.length; i++) {
-            System.out.printf("%-7s".formatted(pakli[i]));
-            if (i % 3 == 0) {
-                System.out.println("\n");
-            }
-        }
-    }
-    
-    public static void kever(int val){
-        switch (val) {
-            case 1:
-                for (int i = 1; i <= 7; i++) {
-                    ujPakli[i] = pakli[20-(i-1)*3];
-                    ujPakli[i+7] = pakli[19-(i-1)*3];
-                    ujPakli[i+14] = pakli[21-(i-1)*3];
-                }break;
-            case 2:
-                for (int i = 1; i <= 7; i++) {
-                    ujPakli[i] = pakli[19-(i-1)*3];
-                    ujPakli[i+7] = pakli[20-(i-1)*3];
-                    ujPakli[i+14] = pakli[21-(i-1)*3];
-                }break;
-            case 3:
-                for (int i = 1; i <= 7; i++) {
-                    ujPakli[i] = pakli[20-(i-1)*3];
-                    ujPakli[i+7] = pakli[21-(i-1)*3];
-                    ujPakli[i+14] = pakli[19-(i-1)*3];
-                }break;
-        }
+        
+        
     }
 
-    private static void melyikVolt(){
-        System.out.println("A valasztott lap: " +ujPakli[11]);
+    public Kartyatrukk() {
+        
+    }
+    
+    private void indit(){
+
     }
 }
